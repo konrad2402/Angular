@@ -1,7 +1,8 @@
 ﻿var APP = angular.module('APP', []);
 
 APP.ApplicationCtrl = function ($scope) {
- $scope.cities = [
+ $scope.cities = new Array();
+	var tab1 = [
         '"I":56,"B":4.1419,"S":4.1364,"P":0.11',
         '"I":55,"B":3.0442,"S":3.0392,"P":0.34',
         '"I":2,"B":1.3609,"S":1.3607,"P":-0.18',
@@ -14,44 +15,40 @@ APP.ApplicationCtrl = function ($scope) {
 	var x = 0;
     var tablica = new Array(10);
 	var BuyBegin, BuyEnd, SellBegin, SellEnd, Procent;
-	
-	for(x;x<$scope.cities.length;x++){
-		tablica[x] = new Array();
-	}
+
 	x=0;
-	for(x;x<$scope.cities.length;x++){
-		tablica[x] = $scope.cities[x];
-		BuyBegin=tablica[x].indexOf(':',5);
+	for(x;x<tab1.length;x++){
+		tablica = tab1[x];
+		BuyBegin=tablica.indexOf(':',5);
 		BuyBegin+=1;
-		BuyEnd=tablica[x].indexOf(',',13);
+		BuyEnd=tablica.indexOf(',',13);
 		
-		SellBegin=tablica[x].indexOf(':',17);
+		SellBegin=tablica.indexOf(':',17);
 		SellBegin+=1;
-		SellEnd=tablica[x].indexOf(',',22);
+		SellEnd=tablica.indexOf(',',22);
 		
-		Procent = tablica[x].indexOf(':',28);
+		Procent = tablica.indexOf(':',28);
 		Procent+=1;
-		console.log(tablica[x].substring(BuyBegin, BuyEnd) + "  " + tablica[x].substring(SellBegin,SellEnd) + "   " + tablica[x].substring(Procent,tablica[x].length) + "   " + $scope.cities[x].length);
-	}
-	//var y = new Array();
-	//y = tablica[0];
-	//y.indeksOf ('"B":', 0);
-	//console.log(y.substring(BuyBegin, BuyEnd));
-	//string  = "ABCDEFGHIJK	LŁMNOPRSTUWZY";
-//string.indexOf("K", 3);   // zwróci 10
-	//string  = "ABCDEFGHIJKLŁMNOPRSTUWZY";
-//window.alert(string.substring(5, 15));
-	//$tablica =  $scope.cities;
-	//console.log($scope.cities.length);
-/*	for(x;x<$tablica.length;x++){
-		console.log($tablica[x]);
-	}*/
-	/*for(x;x<$scope.cities.length;x++){
-		console.log($tablica[x].length);
-		var y=0;
-		$scope.cities[0].splice(0, 2);
+		tablica = (tablica.substring(BuyBegin, BuyEnd) + "  " + tablica.substring(SellBegin,SellEnd) + "   " + tablica.substring(Procent,tablica.length));
+		console.log(tablica);
+	} $scope.cities = tablica;
+/*	
+	x=0;
+	for(x;x<tab1.length;x++){
+		tablica = $scope.cities[x];
+		BuyBegin=tablica.indexOf(':',5);
+		BuyBegin+=1;
+		BuyEnd=tablica.indexOf(',',13);
 		
-	}*/
+		SellBegin=tablica.indexOf(':',17);
+		SellBegin+=1;
+		SellEnd=tablica.indexOf(',',22);
+		
+		Procent = tablica.indexOf(':',28);
+		Procent+=1;
+		console.log(tablica.substring(BuyBegin, BuyEnd) + "  " + tablica.substring(SellBegin,SellEnd) + "   " + tablica.substring(Procent,tablica.length) + "   " + $scope.cities.length);
+	} 
+*/	
 };
 
 // http://mrzepinski.pl/angularjs-5-ng-repeat.html  <- filtry
