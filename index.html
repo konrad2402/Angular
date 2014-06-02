@@ -3,16 +3,26 @@
   <head>
     <script src="angular.min.js"></script>
     <script src="MojScript.js"></script>
+	<link rel="Stylesheet" type="text/css" href="style.css" />
 	
   </head>
   <body>
-  
-  
-   <div ng-app="APP" ng-controller="APP.ApplicationCtrl">
-    <ul>
-        <li ng-repeat="item in cities">{{ item }}</li>
-    </ul>
-</div>
+	<div id="gora">
+		<ul>
+			<li id="xxx">Waluta </li>
+			<li id="xxx"> Kupno</li>
+			<li id="xxx">Sprzedaż</li>
+			<li id="xxx">Zmiany</li>
+		</ul>
+				
+	</div>
+	<div id="dol">
+	   <div ng-app="APP" ng-controller="APP.ApplicationCtrl">
+			<ul>
+				<li ng-repeat="item in cities">{{ item }}</li>
+			</ul>
+		</div>
+	</div>
 	
 	
   </body>

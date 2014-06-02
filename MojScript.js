@@ -15,7 +15,18 @@ APP.ApplicationCtrl = function ($scope) {
 	var x = 0;
     var tablica = new Array(10);
 	var BuyBegin, BuyEnd, SellBegin, SellEnd, Procent;
-
+	
+	var Valuty = [
+		'EUR/PLN',
+		'USD/PLN',
+		'EUR/USD',
+		'EUR/CHF',
+		'EUR/JPY',
+		'EUR/GBP',
+		'EUR/AUD',
+		'EUR/NOK'
+	];
+	
 	x=0;
 	for(x;x<tab1.length;x++){
 		tablica = tab1[x];
@@ -29,26 +40,11 @@ APP.ApplicationCtrl = function ($scope) {
 		
 		Procent = tablica.indexOf(':',28);
 		Procent+=1;
-		tablica = (tablica.substring(BuyBegin, BuyEnd) + "  " + tablica.substring(SellBegin,SellEnd) + "   " + tablica.substring(Procent,tablica.length));
+		tablica = (Valuty[x] + "   " + tablica.substring(BuyBegin, BuyEnd) + "   " + tablica.substring(SellBegin,SellEnd) + "   " + tablica.substring(Procent,tablica.length));
 		console.log(tablica);
-	} $scope.cities = tablica;
-/*	
-	x=0;
-	for(x;x<tab1.length;x++){
-		tablica = $scope.cities[x];
-		BuyBegin=tablica.indexOf(':',5);
-		BuyBegin+=1;
-		BuyEnd=tablica.indexOf(',',13);
-		
-		SellBegin=tablica.indexOf(':',17);
-		SellBegin+=1;
-		SellEnd=tablica.indexOf(',',22);
-		
-		Procent = tablica.indexOf(':',28);
-		Procent+=1;
-		console.log(tablica.substring(BuyBegin, BuyEnd) + "  " + tablica.substring(SellBegin,SellEnd) + "   " + tablica.substring(Procent,tablica.length) + "   " + $scope.cities.length);
-	} 
-*/	
+		$scope.cities.push(tablica);
+		console.log($scope.cities);
+	}	
 };
 
 // http://mrzepinski.pl/angularjs-5-ng-repeat.html  <- filtry
