@@ -13,7 +13,7 @@ APP.ApplicationCtrl = function ($scope) {
     ];
 	var x = 0;
     var tablica = new Array(10);
-	var tmp, tmp2; 
+	var BuyBegin, BuyEnd, SellBegin, SellEnd, Procent;
 	
 	for(x;x<$scope.cities.length;x++){
 		tablica[x] = new Array();
@@ -21,16 +21,22 @@ APP.ApplicationCtrl = function ($scope) {
 	x=0;
 	for(x;x<$scope.cities.length;x++){
 		tablica[x] = $scope.cities[x];
-		tmp=tablica[x].indexOf(':',5);
-		tmp+=1;
-		tmp2=tablica[x].indexOf(',',13);
-		//$tablica[x].splice(0,9);
-		console.log(tablica[x].substring(tmp, tmp2) + "  " + tablica[0].substring(22,28) + "   " +  $scope.cities[x].length);
+		BuyBegin=tablica[x].indexOf(':',5);
+		BuyBegin+=1;
+		BuyEnd=tablica[x].indexOf(',',13);
+		
+		SellBegin=tablica[x].indexOf(':',17);
+		SellBegin+=1;
+		SellEnd=tablica[x].indexOf(',',22);
+		
+		Procent = tablica[x].indexOf(':',28);
+		Procent+=1;
+		console.log(tablica[x].substring(BuyBegin, BuyEnd) + "  " + tablica[x].substring(SellBegin,SellEnd) + "   " + tablica[x].substring(Procent,tablica[x].length) + "   " + $scope.cities[x].length);
 	}
 	//var y = new Array();
 	//y = tablica[0];
 	//y.indeksOf ('"B":', 0);
-	//console.log(y.substring(tmp, tmp2));
+	//console.log(y.substring(BuyBegin, BuyEnd));
 	//string  = "ABCDEFGHIJK	LŁMNOPRSTUWZY";
 //string.indexOf("K", 3);   // zwróci 10
 	//string  = "ABCDEFGHIJKLŁMNOPRSTUWZY";
