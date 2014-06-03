@@ -1,13 +1,15 @@
 ﻿<!doctype html>
 <html ng-app>
   <head>
-    <script src="angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <!--<script src="angular.min.js"></script> -->
     <script src="MojScript.js"></script>
 	<link rel="Stylesheet" type="text/css" href="style.css" />
   <script src="jquery-1.11.1.min.js"></script>
 	
   </head>
   <body>
+  <!--
 	<div id="gora">
 		<ul>
 			<li id="xxx">Waluta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -23,6 +25,7 @@
 			<div id="lewa1">
 			<ul><li ng-repeat="waluty in Valuty | filter:filterQuery">{{waluty}}</li></ul>
 			</div>
+			
 			<div id="lewa">
 			<ul><li ng-repeat="item in cities | filter:filterQuery">{{item.B}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.S}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	{{item.P}}</li></ul>
 			</div>
@@ -30,17 +33,14 @@
 			<input type="text" ng-model="filterQuery" placeholder="filter" />
 		</div>
 	</div>
+	-->
 	
-	<!--
 	<div ng-controller="Ctrl">
   <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
   <hr/>
   [ <a href="" ng-click="predicate=''">unsorted</a> ]
   <table class="cities">
     <tr>
-      <th><a href="" ng-click="predicate = 'B'; reverse=false">Kupno</a>
-          (<a href="" ng-click="predicate = '-B'; reverse=false">^</a>)</th>
-      <th><a href="" ng-click="predicate = 'S'; reverse=!reverse">Sprzedaz</a></th>
       <th><a href="" ng-click="predicate = 'P'; reverse=!reverse">Zmiany</a></th>
     </tr>
     <tr ng-repeat="item in cities | orderBy:predicate:reverse">
@@ -50,6 +50,6 @@
     </tr>
   </table>
 </div>
--->
+
   </body>
 </html>

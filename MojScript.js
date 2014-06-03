@@ -1,7 +1,7 @@
 ﻿var APP = angular.module('APP', []);
 
-APP.ApplicationCtrl = function ($scope) {
- $scope.cities = new Array();
+function Ctrl($scope) {
+ //$scope.cities = new Array();
 	
 	var x = 0;	
 	$scope.Valuty = [
@@ -18,10 +18,11 @@ APP.ApplicationCtrl = function ($scope) {
 	$.getJSON( "waluty.json", function(data) {
 		$scope.$apply(function(){
             $scope.cities = data['Feeds'];
-			console.log( data.length );
-		console.log(data.Feeds[1])
-        });
+			//console.log( data.length );
+		//console.log(data.Feeds[1])
+        }); 
 	})
 };
 
-// http://mrzepinski.pl/angularjs-5-ng-repeat.html  <- filtry
+// http://mrzepinski.pl/angularjs-5-ng-repeat.html    <- filtry
+// https://docs.angularjs.org/api/ng/filter/orderBy   <- sortowanie
