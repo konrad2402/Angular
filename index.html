@@ -9,7 +9,8 @@
 	
   </head>
   <body>
-  <!--
+  
+	<h2></br>PRZYK&#321;AD FILTROWANIA</h2>
 	<div id="gora">
 		<ul>
 			<li id="xxx">Waluta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -33,23 +34,25 @@
 			<input type="text" ng-model="filterQuery" placeholder="filter" />
 		</div>
 	</div>
-	-->
 	
+	<h2></br>SORTOWANIE PO SPADKU/WZRO&#346;CIE</h2>
 	<div ng-controller="Ctrl">
-  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
-  <hr/>
-  [ <a href="" ng-click="predicate=''">unsorted</a> ]
-  <table class="cities">
-    <tr>
-      <th><a href="" ng-click="predicate = 'P'; reverse=!reverse">Zmiany</a></th>
-    </tr>
-    <tr ng-repeat="item in cities | orderBy:predicate:reverse">
-      <td>{{item.B}}</td>
-      <td>{{item.S}}</td>
-      <td>{{item.P}}</td>
-    </tr>
-  </table>
-</div>
+	  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
+	  <hr/>
+	  [ <a href="" ng-click="predicate=''">unsorted</a> ]
+	  <table class="cities">
+		<tr>
+			<th>Kupno</th>
+			<th>Sprzeda&#380;</th>
+		  <th><a href="" ng-click="predicate = 'P'; reverse=!reverse">Zmiany</a></th>
+		</tr>
+		<tr ng-repeat="item in cities | orderBy:predicate:reverse">
+		  <td>{{item.B}}</td>
+		  <td>{{item.S}}</td>
+		  <td>{{item.P}}</td>
+		</tr>
+	  </table>
+	</div>
 
   </body>
 </html>
