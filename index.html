@@ -13,8 +13,8 @@
 	<h2></br>PRZYK&#321;AD FILTROWANIA</h2>
 	<div id="gora">
 		<ul>
-			<li id="xxx">Waluta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-			<li id="xxx"> Kupno &nbsp;&nbsp;</li>
+			<li id="xxx">Waluta</li>
+			<li style="margin-left: 120px;" id="xxx"> Kupno &nbsp;&nbsp;</li>
 			<li id="xxx">Sprzeda&#380; &nbsp;&nbsp;</li>
 			<li id="xxx">Zmiany &nbsp;&nbsp;</li>
 		</ul>
@@ -40,7 +40,15 @@
 	  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
 	  <hr/>
 	  [ <a href="" ng-click="predicate=''">unsorted</a> ]
-	  <table class="cities">
+	  <table id="lewa1">
+		<tr>
+			<th>Waluty</th>
+		</tr>
+		<tr ng-repeat="waluty in Valuty | filter:filterQuery">
+		  <td>{{waluty}}</td>
+		</tr>
+	  </table>
+	  <table id="lewa" class="cities">
 		<tr>
 			<th>Kupno</th>
 			<th>Sprzeda&#380;</th>
