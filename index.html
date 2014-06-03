@@ -6,10 +6,17 @@
     <script src="MojScript.js"></script>
 	<link rel="Stylesheet" type="text/css" href="style.css" />
   <script src="jquery-1.11.1.min.js"></script>
+  <script>
+	function timedRefresh()
+	{
+	location.reload()
+	console.log("siemka");
+	}
+   </script>
 	
   </head>
   <body>
-  
+  <!--
 	<h2></br>PRZYK&#321;AD FILTROWANIA</h2>
 	<div id="gora">
 		<ul>
@@ -34,33 +41,36 @@
 			<input type="text" ng-model="filterQuery" placeholder="filter" />
 		</div>
 	</div>
-	
-	<h2></br>SORTOWANIE PO SPADKU/WZRO&#346;CIE</h2>
+	-->
+	<h2></br>SORTOWANIE PO SPADKU/WZRO&#346;CIE ORAZ FILTROWANIE PO WSZYSTKIM :)</h2>
 	<div ng-controller="Ctrl">
-	  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
-	  <hr/>
-	  [ <a href="" ng-click="predicate=''">unsorted</a> ]
-	  <table id="lewa1">
-		<tr>
-			<th>Waluty</th>
-		</tr>
-		<tr ng-repeat="waluty in Valuty | filter:filterQuery">
-		  <td>{{waluty}}</td>
-		</tr>
-	  </table>
-	  <table id="lewa" class="cities">
-		<tr>
-			<th>Kupno</th>
-			<th>Sprzeda&#380;</th>
-		  <th><a href="" ng-click="predicate = 'P'; reverse=!reverse">Zmiany</a></th>
-		</tr>
-		<tr ng-repeat="item in cities | orderBy:predicate:reverse">
-		  <td>{{item.B}}</td>
-		  <td>{{item.S}}</td>
-		  <td>{{item.P}}</td>
-		</tr>
-	  </table>
+		<hr/>
+		[ <a href="" ng-click="predicate=''">unsorted</a> ]
+		<table id="lewa1" class="cities" >
+			<tr  id="gora">
+				<td id="naglowek">Waluty</td>
+			</tr>
+			<tr  id="waluty" ng-repeat="waluty in Valuty | filter:filterQuery">
+				<td>{{waluty}}</td>
+			</tr>
+		</table>
+		<table id="lewa" class="cities">
+			<tr id="gora">
+				<td id="naglowek">Kupno</td>
+				<td id="naglowek">Sprzeda&#380;</td>
+				<td><a href="" id="naglowek" ng-click="predicate = 'P'; reverse=!reverse">Zmiany</a></td>
+			</tr>
+			<tr  id="waluty"  ng-repeat="item in cities | orderBy:predicate:reverse | filter:filterQuery">
+			  <td>{{item.B}}</td>
+			  <td>{{item.S}}</td>
+			  <td>{{item.P}}</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" ng-model="filterQuery" placeholder="filter" />
+				</td>
+			</tr>
+		</table>
 	</div>
-
   </body>
 </html>

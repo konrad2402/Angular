@@ -1,14 +1,16 @@
-li:nth-child(+2n) {
+.cities tr:nth-child(+2n) {
 	color: red;
 	background-color: #7FFFD4;
 	
 }
-li:nth-child(+2n - 1) {
+.cities tr:nth-child(+2n - 1) {
 	color: #7FFF00;
 	background-color: #8A2BE2;
 }
-ul {
-	list-style-type: none;
+#naglowek {
+	color: red;
+	font-weight: bold;
+	font-size: 17px;
 }
 #lewa {
 	float: left;
@@ -27,9 +29,6 @@ ul {
 	top: 0px;
 	right: 0;
 	width: 90px;
-}
-.ng-valid {
-	height: 153px;
 }
 #gora {
 	width: 100%;
