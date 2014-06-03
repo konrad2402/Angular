@@ -4,26 +4,26 @@
     <script src="angular.min.js"></script>
     <script src="MojScript.js"></script>
 	<link rel="Stylesheet" type="text/css" href="style.css" />
+  <script src="jquery-1.11.1.min.js"></script>
 	
   </head>
   <body>
 	<div id="gora">
 		<ul>
-			<li id="xxx">Waluta </li>
-			<li id="xxx"> Kupno</li>
-			<li id="xxx">Sprzedaż</li>
-			<li id="xxx">Zmiany</li>
+			<li id="xxx">Waluta &nbsp;</li>
+			<li id="xxx"> Kupno &nbsp;</li>
+			<li id="xxx">Sprzeda&#380; &nbsp;</li>
+			<li id="xxx">Zmiany &nbsp;</li>
 		</ul>
 				
 	</div>
 	<div id="dol">
 	   <div ng-app="APP" ng-controller="APP.ApplicationCtrl">
 			<ul>
-				<li ng-repeat="item in cities">{{ item }}</li>
+				<li id="1" ng-repeat="waluty in Valuty">{{waluty}}</li>
+				<li id="2" ng-repeat="item in cities">{{item.B}}{{item.S}}{{item.P}}</li>
 			</ul>
 		</div>
 	</div>
-	
-	
   </body>
 </html>
