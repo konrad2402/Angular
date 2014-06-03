@@ -10,20 +10,46 @@
   <body>
 	<div id="gora">
 		<ul>
-			<li id="xxx">Waluta &nbsp;</li>
-			<li id="xxx"> Kupno &nbsp;</li>
-			<li id="xxx">Sprzeda&#380; &nbsp;</li>
-			<li id="xxx">Zmiany &nbsp;</li>
+			<li id="xxx">Waluta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li id="xxx"> Kupno &nbsp;&nbsp;</li>
+			<li id="xxx">Sprzeda&#380; &nbsp;&nbsp;</li>
+			<li id="xxx">Zmiany &nbsp;&nbsp;</li>
 		</ul>
 				
 	</div>
 	<div id="dol">
 	   <div ng-app="APP" ng-controller="APP.ApplicationCtrl">
-			<ul>
-				<li id="1" ng-repeat="waluty in Valuty">{{waluty}}</li>
-				<li id="2" ng-repeat="item in cities">{{item.B}}{{item.S}}{{item.P}}</li>
-			</ul>
+			
+			<div id="lewa1">
+			<ul><li ng-repeat="waluty in Valuty | filter:filterQuery">{{waluty}}</li></ul>
+			</div>
+			<div id="lewa">
+			<ul><li ng-repeat="item in cities | filter:filterQuery">{{item.B}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.S}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	{{item.P}}</li></ul>
+			</div>
+			
+			<input type="text" ng-model="filterQuery" placeholder="filter" />
 		</div>
 	</div>
+	
+	<!--
+	<div ng-controller="Ctrl">
+  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
+  <hr/>
+  [ <a href="" ng-click="predicate=''">unsorted</a> ]
+  <table class="cities">
+    <tr>
+      <th><a href="" ng-click="predicate = 'B'; reverse=false">Kupno</a>
+          (<a href="" ng-click="predicate = '-B'; reverse=false">^</a>)</th>
+      <th><a href="" ng-click="predicate = 'S'; reverse=!reverse">Sprzedaz</a></th>
+      <th><a href="" ng-click="predicate = 'P'; reverse=!reverse">Zmiany</a></th>
+    </tr>
+    <tr ng-repeat="item in cities | orderBy:predicate:reverse">
+      <td>{{item.B}}</td>
+      <td>{{item.S}}</td>
+      <td>{{item.P}}</td>
+    </tr>
+  </table>
+</div>
+-->
   </body>
 </html>
